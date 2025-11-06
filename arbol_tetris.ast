@@ -1,0 +1,537 @@
+{
+    "regla_general": {
+        "nombre_juego": "Tetris",
+        "tablero_ancho": 10,
+        "tablero_largo": 20
+    },
+    "regla_puntuacion": {
+        "evento": "linea_completada",
+        "accion": "eliminar_fila",
+        "puntuacion_linea": 100,
+        "puntuacion_dos_lineas": 300,
+        "puntuacion_tres_lineas": 500,
+        "puntuacion_cuatro_lineas": 700
+    },
+    "regla_aparicion_fichas": {
+        "aparicion_aleatoria": "si"
+    },
+    "regla_niveles_velocidad": {
+        "velocidad_inicial": 1,
+        "puntos_nuevo_nivel": 1000
+    },
+    "regla_fin_juego": {
+        "evento": "pieza_pasa_tope_tablero",
+        "accion": "finalizar_juego"
+    },
+    "regla_controles": {
+        "izquierda": "a",
+        "derecha": "d",
+        "rotar": "w",
+        "acelerar_caida": "s"
+    },
+    "figura_CUADRADO": {
+        "color": "amarillo",
+        "rotacion0": [
+            [
+                1,
+                1
+            ],
+            [
+                1,
+                1
+            ]
+        ],
+        "rotacion90": [
+            [
+                1,
+                1
+            ],
+            [
+                1,
+                1
+            ]
+        ],
+        "rotacion180": [
+            [
+                1,
+                1
+            ],
+            [
+                1,
+                1
+            ]
+        ],
+        "rotacion270": [
+            [
+                1,
+                1
+            ],
+            [
+                1,
+                1
+            ]
+        ]
+    },
+    "figura_T": {
+        "color": "morado",
+        "rotacion0": [
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                1,
+                1,
+                1
+            ],
+            [
+                0,
+                0,
+                0
+            ]
+        ],
+        "rotacion90": [
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                1
+            ],
+            [
+                0,
+                1,
+                0
+            ]
+        ],
+        "rotacion180": [
+            [
+                0,
+                0,
+                0
+            ],
+            [
+                1,
+                1,
+                1
+            ],
+            [
+                0,
+                1,
+                0
+            ]
+        ],
+        "rotacion270": [
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                1,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                0
+            ]
+        ]
+    },
+    "figura_S": {
+        "color": "verde",
+        "rotacion0": [
+            [
+                0,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                0
+            ],
+            [
+                0,
+                0,
+                0
+            ]
+        ],
+        "rotacion90": [
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                1
+            ],
+            [
+                0,
+                0,
+                1
+            ]
+        ],
+        "rotacion180": [
+            [
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                0
+            ]
+        ],
+        "rotacion270": [
+            [
+                1,
+                0,
+                0
+            ],
+            [
+                1,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                0
+            ]
+        ]
+    },
+    "figura_S_INVERTIDA": {
+        "color": "rojo",
+        "rotacion0": [
+            [
+                1,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                1
+            ],
+            [
+                0,
+                0,
+                0
+            ]
+        ],
+        "rotacion90": [
+            [
+                0,
+                0,
+                1
+            ],
+            [
+                0,
+                1,
+                1
+            ],
+            [
+                0,
+                1,
+                0
+            ]
+        ],
+        "rotacion180": [
+            [
+                0,
+                0,
+                0
+            ],
+            [
+                1,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                1
+            ]
+        ],
+        "rotacion270": [
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                1,
+                1,
+                0
+            ],
+            [
+                1,
+                0,
+                0
+            ]
+        ]
+    },
+    "figura_PALO": {
+        "color": "cyan",
+        "rotacion0": [
+            [
+                0,
+                1,
+                0,
+                0
+            ],
+            [
+                0,
+                1,
+                0,
+                0
+            ],
+            [
+                0,
+                1,
+                0,
+                0
+            ],
+            [
+                0,
+                1,
+                0,
+                0
+            ]
+        ],
+        "rotacion90": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0
+            ]
+        ],
+        "rotacion180": [
+            [
+                0,
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                0,
+                1,
+                0
+            ]
+        ],
+        "rotacion270": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                0,
+                0,
+                0,
+                0
+            ]
+        ]
+    },
+    "figura_L": {
+        "color": "naranja",
+        "rotacion0": [
+            [
+                0,
+                0,
+                1
+            ],
+            [
+                1,
+                1,
+                1
+            ],
+            [
+                0,
+                0,
+                0
+            ]
+        ],
+        "rotacion90": [
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                1
+            ]
+        ],
+        "rotacion180": [
+            [
+                0,
+                0,
+                0
+            ],
+            [
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                0,
+                0
+            ]
+        ],
+        "rotacion270": [
+            [
+                1,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                0
+            ]
+        ]
+    },
+    "figura_L_INVERTIDA": {
+        "color": "azul",
+        "rotacion0": [
+            [
+                1,
+                0,
+                0
+            ],
+            [
+                1,
+                1,
+                1
+            ],
+            [
+                0,
+                0,
+                0
+            ]
+        ],
+        "rotacion90": [
+            [
+                0,
+                1,
+                1
+            ],
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                0
+            ]
+        ],
+        "rotacion180": [
+            [
+                0,
+                0,
+                0
+            ],
+            [
+                1,
+                1,
+                1
+            ],
+            [
+                0,
+                0,
+                1
+            ]
+        ],
+        "rotacion270": [
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                0
+            ],
+            [
+                1,
+                1,
+                0
+            ]
+        ]
+    }
+}

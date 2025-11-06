@@ -1,0 +1,65 @@
+#Valores generales del juego
+
+regla general = {
+nombre_juego = "Snake"
+
+tablero_ancho = 20
+tablero_largo = 12
+
+tabla_puntuacion_ancho = 20 
+#tiene el mismo ancho del tablero
+tabla_puntuacion_alto = 3
+
+}
+
+#Reglas del juego
+
+regla puntuacion = {
+	puntuacion_inicial = 0
+	evento = "manzana_comida"
+	accion = "aumentar_longitud_de_serpiente"
+	aumento_longitud = 1
+	aumento_puntuacion = 1
+}
+
+regla aparicion_manzanas = {
+	aparicion_aleatoria = "si"
+	condicion  = "cuadro_vacio"
+}
+#recorre un bloque cada 0.5s
+regla velocidad = {
+	velocidad = 0.5
+}
+
+regla fin_juego = {
+	evento_1 = "serpiente_choca_con_borde_de_tablero"
+	evento_2 = "serpiente_choca_con_su_propio_cuerpo"
+	accion = "finalizar_juego"
+}
+
+#Definición de controles
+
+regla controles = {
+	#hacia los lados
+	izquierda = "a"
+	derecha = "d"
+
+	#rotacion y acelerar caida
+	rotar = "w"
+	acelerar_caida = "s"
+}
+
+#Definición avatar
+
+figura serpiente = {
+	color = "azul"
+	longitud = 4
+	ancho = 1
+}
+
+figura manzana = {
+	color = "rojo"
+	longitud = 1
+	ancho = 1
+}
+

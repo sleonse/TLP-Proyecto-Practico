@@ -1,0 +1,44 @@
+{
+    "regla_general": {
+        "nombre_juego": "Snake",
+        "tablero_ancho": 20,
+        "tablero_largo": 12,
+        "tabla_puntuacion_ancho": 20,
+        "tabla_puntuacion_alto": 3
+    },
+    "regla_puntuacion": {
+        "puntuacion_inicial": 0,
+        "evento": "manzana_comida",
+        "accion": "aumentar_longitud_de_serpiente",
+        "aumento_longitud": 1,
+        "aumento_puntuacion": 1
+    },
+    "regla_aparicion_manzanas": {
+        "aparicion_aleatoria": "si",
+        "condicion": "cuadro_vacio"
+    },
+    "regla_velocidad": {
+        "velocidad": 0.5
+    },
+    "regla_fin_juego": {
+        "evento_1": "serpiente_choca_con_borde_de_tablero",
+        "evento_2": "serpiente_choca_con_su_propio_cuerpo",
+        "accion": "finalizar_juego"
+    },
+    "regla_controles": {
+        "izquierda": "a",
+        "derecha": "d",
+        "rotar": "w",
+        "acelerar_caida": "s"
+    },
+    "figura_serpiente": {
+        "color": "azul",
+        "longitud": 4,
+        "ancho": 1
+    },
+    "figura_manzana": {
+        "color": "rojo",
+        "longitud": 1,
+        "ancho": 1
+    }
+}
