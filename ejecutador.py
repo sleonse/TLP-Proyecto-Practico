@@ -304,7 +304,7 @@ class Juego:
         return self.control_arriba, self.control_abajo, self.control_izquierda, self.control_derecha
 
     def generar_manzana(self):
-        """Genera una manzana en una posición vacía aleatoria"""
+
         posiciones_vacias = []
         for y in range(self.largo):
             for x in range(self.ancho):
@@ -315,46 +315,45 @@ class Juego:
             self.manzana = random.choice(posiciones_vacias)
 
     def cambiar_direccion_snake(self, nueva_direccion):
-        """Cambia la dirección de la serpiente, evitando giros de 180 grados"""
-        # No permitir giro de 180 grados (direcciones opuestas)
+
         if nueva_direccion[0] == -self.direccion[0] and nueva_direccion[1] == -self.direccion[1]:
             return
         self.direccion_pendiente = nueva_direccion
 
     def mover_serpiente(self):
         """Mueve la serpiente en la dirección actual"""
-        # Aplicar dirección pendiente si existe
+
         if self.direccion_pendiente:
             self.direccion = self.direccion_pendiente
             self.direccion_pendiente = None
         
-        # Calcular nueva posición de la cabeza
+
         cabeza = self.serpiente[0]
         nueva_cabeza = [cabeza[0] + self.direccion[0], cabeza[1] + self.direccion[1]]
         
-        # Verificar colisión con bordes
+
         if (nueva_cabeza[0] < 0 or nueva_cabeza[0] >= self.largo or
             nueva_cabeza[1] < 0 or nueva_cabeza[1] >= self.ancho):
             self.juego_terminado = True
             return
         
-        # Verificar colisión con el propio cuerpo
+
         if nueva_cabeza in self.serpiente:
             self.juego_terminado = True
             return
         
-        # Agregar nueva cabeza
+
         self.serpiente.insert(0, nueva_cabeza)
         
-        # Verificar si comió manzana
+
         if nueva_cabeza == self.manzana:
-            # Aumentar puntuación
+
             regla_puntuacion = self.rules.get('regla_puntuacion', {})
             self.game_puntuacion += regla_puntuacion.get('aumento_puntuacion', 1)
-            # Generar nueva manzana
+
             self.generar_manzana()
         else:
-            # Quitar cola si no comió
+
             self.serpiente.pop()
 
     def imprimir_tablero_snake(self):
@@ -365,11 +364,11 @@ class Juego:
             linea_str = "|"
             for x in range(self.ancho):
                 if [y, x] == self.serpiente[0]:
-                    linea_str += "O"  # Cabeza
+                    linea_str += "O"
                 elif [y, x] in self.serpiente:
-                    linea_str += "o"  # Cuerpo
+                    linea_str += "o"
                 elif self.manzana and [y, x] == self.manzana:
-                    linea_str += "X"  # Manzana
+                    linea_str += "X" 
                 else:
                     linea_str += " "
             linea_str += "|"
@@ -455,3 +454,4 @@ input()
 print("Juego terminado")
 print("Presione enter para salir")
 
+# Terminado
